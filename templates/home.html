@@ -1,0 +1,52 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+ 
+
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	<img src="{% static "images/banners/banner.jpg" %}" class="img-fluid rounded">
+</div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="{% url 'home' %}" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">Popular products</h3>
+</header><!-- sect-heading -->
+
+	
+   
+<div class="row">
+	{% for product in products %}
+	<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.images.url }}"></a><!--images get kry ga jahan images save hain -->
+			<figcaption class="info-wrap">
+				<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>    <!--{{product.product_name}} ki waja sy jo product hum nay storeproduct app sy manually admin panel main save kiay thay us kay baad in ko homepage pr show krwwaye tha to ab un kay actual name show hoon gay  -->
+				<div class="price mt-1">{{ product.price }}</div> <!--show actually price when u write in during the products save on admin panel -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// --> 
+	 {% endfor %}
+</div> <!-- row.// -->
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+
+
+
+{% endblock %}
