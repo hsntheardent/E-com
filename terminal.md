@@ -12,7 +12,7 @@ it config --global user.email ""
 
 git commit -m "my first commit"
 
-git remote set-url origin git@github.com:hsntheardent/E-com.git
+git remote set-url origin git@github.com:----/E-com.git
 
 git branch -M main
 
