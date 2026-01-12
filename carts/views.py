@@ -17,13 +17,13 @@ def add_cart(request, product_id): # we are going to add product that we write p
         cart = Cart.objects.get(cart_id=_cart_id(request) ) # get the cart using the cart_id present in the session
     except Cart.DoesNotExist:
         cart = Cart.objects.create(
-            cart_id = _cart_id(request)
+            cart_id = _cart_id(request) 
         )
         cart.save()
         # when we want to put the product inside the cart and it will becomes cart Item and in 1 cart maybe there will be multiple Item(products) 
         # in Cart so we want to combine the product and cart so will get the cartitem
     try:
-            cart_item = CartItem.objects.get(product=product, cart=cart) # this will bring us hte caritem
+            cart_item = CartItem.objects.get(product=product, cart=cart) # this will bring us th e caritem
             cart_item.quantity += 1               # cart_item.quantity = cart_item.quantity + 1
             cart_item.save()
     except CartItem.DoesNotExist:

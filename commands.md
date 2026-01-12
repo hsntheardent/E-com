@@ -118,8 +118,8 @@ product_detail.html  77 to 81
 {% else %} 
 		<a href="#" class="btn  btn-success"> <span class="text">Added to cart</span> <i class="fasfa-check"></i>  </a>
 			{% endif %}
-### cartsapp and template
-
+### cartapp and template
+set temp simple
 ### Cart and CartItem model creating 
 models.py 
 
@@ -128,34 +128,42 @@ sab sy phly product ko add krna in "add to cart"
 def _cart_id(request):   def add_cart(request):
 final step apply add_cart view function here --> product_fetail.html 88 /
 
-
 ### getting carditem quanity
+def cart
 we need total , need information , need quantity as futher as well  44 sy 57
 
 ### implementing cart item 
-cart.html 27       // models.py  19
+cart.html 33 to 68     // models.py  19
 
 ### calulating tax and total
 views.py 50  and 59  cart.html 78 and 82
 
-### cart increment and decrement and remove button
-views .py  68 // urls.py path // cart.html  43
+### cart increment and decrement 
+views .py  68 // urls.py path // cart.html  49
 
 ### remove_cart_item 
-views.py  81 // urls.py  // cart.html 59
+views.py  81 // urls.py  // cart.html 65
 
 ### handling empty card
 cart.html 13 loop 13---103
 
 ### fix add-to-cart links on store 
-store  143  
-and cart page pr product name click krny sy , product oprn ho jaye {{ cart_item.product.get_url }}  line 39
+store.html  143  
+and cart page pr product name click krny sy  product open ho jaye {{ cart_item.product.get_url }}  line 39
 
-agar product already cart hai to us ko add-to-carat button show ni krwana "view-cart" show krwana hai.  store views.py 29 and 34 then product.html changes from line 79
+# product already in cart
+agar product already cart hai to us ko add-to-carat button show ni krwana "view-cart" show krwana hai.  store views.py Add line 29 and 34 then product.html changes from line 79
+add new logic 
+				{% if in_cart %}
+				<a href="#" class="btn  btn-success"> <span class="text">Added to cart</span> <i class="fas fa-check"></i>  </a>
+				<a href="{% url 'store' %}" class="btn  btn-outline-primary"> <span class="text">view Cart</span> <i class="fas fa-eye"></i>  </a>
+		 		{% else %} 
 
 ### cart counterf on NAvbar
 # basically hum cart-icon pr real cart pproduct ki count shoow krtea raha hain. 
 new file . context_processor.py
 def counter
 setting > 'tempplates' > 'carts.context_processor.counter', on 71
-navbar.html 75 div href and span 
+navbar.html 76 then 74  
+
+# View Details Button (Product Detail Page)

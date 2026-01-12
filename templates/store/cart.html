@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 <body>
@@ -57,7 +57,7 @@
         </td>
         <td> 
             <div class="price-wrap"> 
-                <var class="price">${{ cart_item.sub_total }}</var> 
+                <var class="price">${{ cart_item.sub_total }}</var><!--models.py def sub-total -->
                 <small class="text-muted">${{ cart_item.product.price }}</small> 
             </div> <!-- price-wrap .// -->
         </td>
