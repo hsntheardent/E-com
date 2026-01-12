@@ -30,4 +30,13 @@ git push origin main
 
 git push
 
+# Agar tum file repo se delete karna chahte ho, lekin apni machine me rakho:
+git rm --cached commands.md
+git commit -m "Describe your changes"
+git push origin main
+git push
+
+
+
+
 
