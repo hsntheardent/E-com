@@ -1,4 +1,5 @@
 ls -a
+
 git init
 create file .gitignore -> web"gitignore.io" search "djnago" copy and paste into youy .gitignore file
 git add -A
